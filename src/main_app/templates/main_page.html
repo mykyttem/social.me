@@ -1,65 +1,42 @@
-{% load tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main page</title>
-    {% tailwind_css %}
-</head>
-<body>
-    <header class="bg-blue-500 p-4">
-        <h1 class="text-4xl font-bold text-white mb-2">Social me</h1>
-        <h1 class="text-3xl text-white">Service for creating pages with links to social networks</h1>
-    </header>
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #ff6b6b, #6078ea); 
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        
-    </style>
+{% extends 'base_h.html' %}
 
-    <div class="container mx-auto p-8">
-        <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-            <div class="mb-4">
-                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">your name</label>
-                <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:border-blue-300" placeholder="name" required>
-            </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2">Social network:</label>
-                <div class="flex space-x-4">
-                    <label for="facebook" class="flex items-center">
-                        <input type="checkbox" id="facebook" name="social_media" value="facebook">
-                        <span class="ml-2">Facebook</span>
-                    </label>
-                    <label for="twitter" class="flex items-center">
-                        <input type="checkbox" id="twitter" name="social_media" value="twitter">
-                        <span class="ml-2">Threads</span>
-                    </label>
-                    <label for="instagram" class="flex items-center">
-                        <input type="checkbox" id="instagram" name="social_media" value="instagram">
-                        <span class="ml-2">Instagram</span>
-                    </label>
-                    <label for="instagram" class="flex items-center">
-                        <input type="checkbox" id="instagram" name="social_media" value="instagram">
-                        <span class="ml-2">Reddit</span>
-                    </label>
-                </div>
-            </div>
+{% block title %} Main page {% endblock %}
 
-            <div class="mb-4">
-                <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Done</button>
+{% block body %}
+<div id="container-content" class="container mx-auto p-8 flex items-center h-full">
+    <form method="POST" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">your name</label>
+            <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:border-blue-300" placeholder="name" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Social network:</label>
+            <div class="flex space-x-4">
+                <label for="facebook" class="flex items-center">
+                    <input type="checkbox" id="facebook" name="social_media" value="facebook">
+                    <span class="ml-2">Facebook</span>
+                </label>
+                <label for="twitter" class="flex items-center">
+                    <input type="checkbox" id="twitter" name="social_media" value="twitter">
+                    <span class="ml-2">Threads</span>
+                </label>
+                <label for="instagram" class="flex items-center">
+                    <input type="checkbox" id="instagram" name="social_media" value="instagram">
+                    <span class="ml-2">Instagram</span>
+                </label>
+                <label for="instagram" class="flex items-center">
+                    <input type="checkbox" id="instagram" name="social_media" value="instagram">
+                    <span class="ml-2">Reddit</span>
+                </label>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+        </div>
+
+        <div class="mb-4">
+            <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Done</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

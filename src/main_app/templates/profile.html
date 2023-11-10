@@ -1,0 +1,25 @@
+{% extends 'base_h.html' %}
+
+{% block title %} User Profile {% endblock %}
+
+{% block body %}
+<div id="form-block" class="container p-2 flex justify-center items-center h-screen">
+    <div class="bg-white rounded-lg shadow-md p-4">
+        <div class="text-center">
+            <div class="w-48 h-48 mx-auto flex items-center justify-center rounded-full bg-blue-500 text-white text-5xl font-semibold mb-4">
+                JD
+            </div>
+            <h1 class="text-3xl font-semibold text-gray-800 mb-4">John Doe</h1>
+        </div>
+
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Networks Links</h3>
+            <ul>
+                <li class="mb-2">
+                    <a href="https://www.instagram.com/" class="text-blue-500 hover:underline">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

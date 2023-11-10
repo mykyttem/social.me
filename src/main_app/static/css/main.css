@@ -1,0 +1,19 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, #ff6b6b, #6078ea);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+}
+
+
+#container-content {
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+}
