@@ -5,19 +5,30 @@
 {% block body %}
 <div id="form-block" class="container p-2 flex justify-center items-center h-screen">
     <div class="bg-white rounded-lg shadow-md p-4">
+
         <div class="text-center">
             <div class="w-48 h-48 mx-auto flex items-center justify-center rounded-full bg-blue-500 text-white text-5xl font-semibold mb-4">
-                JD
+                {{name|slice:"2"}}
             </div>
-            <h1 class="text-3xl font-semibold text-gray-800 mb-4">John Doe</h1>
+            <h1 class="text-3xl font-semibold text-gray-800 mb-4">{{name}}</h1>
         </div>
 
         <div class="mt-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Networks Links</h3>
             <ul>
+                {% for network in selected_social_network %}
                 <li class="mb-2">
-                    <a href="https://www.instagram.com/" class="text-blue-500 hover:underline">Instagram</a>
+                    {% if network == "facebook" %}
+                        <a class="text-blue-500 hover:underline">facebook</a>
+                    {% elif network == "threads" %}
+                        <a class="text-blue-500 hover:underline">threads</a>
+                    {% elif network == "instagram" %}
+                        <a class="text-blue-500 hover:underline">instagram</a>
+                    {% elif network == "reddit" %}
+                        <a class="text-blue-500 hover:underline">reddit</a>
+                    {% endif %}
                 </li>
+            {% endfor %}
             </ul>
         </div>
     </div>
